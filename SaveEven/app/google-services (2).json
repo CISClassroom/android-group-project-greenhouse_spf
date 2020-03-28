@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "110862777377",
+    "firebase_url": "https://groupsaveeven.firebaseio.com",
+    "project_id": "groupsaveeven",
+    "storage_bucket": "groupsaveeven.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110862777377:android:5b7eac28f16054c001b760",
+        "android_client_info": {
+          "package_name": "com.cis.saveeven"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110862777377-tb39311b777ob0jlmdfgi9fgojqib3e6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cis.saveeven",
+            "certificate_hash": "c6be13b840cf774332923059dd209bc8202b3c80"
+          }
+        },
+        {
+          "client_id": "110862777377-iq5f4crog777l5mt02q3se0ulk3cefkq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmF_8t2fjkW_dcQVZ8fg_q1jX2XL1jlYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110862777377-iq5f4crog777l5mt02q3se0ulk3cefkq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
