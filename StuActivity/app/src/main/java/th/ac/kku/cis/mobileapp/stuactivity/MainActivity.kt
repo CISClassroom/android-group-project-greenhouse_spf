@@ -36,17 +36,17 @@ class MainActivity : AppCompatActivity() {
 
         login.setOnClickListener({ v -> singIn() })
 
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-//            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
-//                //permission was not enabled
-//                val permission = arrayOf( Manifest.permission.WRITE_EXTERNAL_STORAGE)
-//                //show popup to request permission
-//                requestPermissions(permission, PERMISSION_CODE)
-//            }
-//            else{
-//
-//            }
-//        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
+                //permission was not enabled
+                val permission = arrayOf( Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                //show popup to request permission
+                requestPermissions(permission, PERMISSION_CODE)
+            }
+            else{
+
+            }
+        }
 
         var gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -61,43 +61,41 @@ class MainActivity : AppCompatActivity() {
 
 
 
-//    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-//        //called when user presses ALLOW or DENY from Permission Request Popup
-//        when(requestCode){
-//            PERMISSION_CODE -> {
-//                if (grantResults.size > 0 && grantResults[0] ==
-//                    PackageManager.PERMISSION_GRANTED){
-//
-//                }
-//                else {
-//                    //permission from popup was denied
-//                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
-//                    finish();
-//
-//                }
-//            }
-//        }
-//    }
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        //called when user presses ALLOW or DENY from Permission Request Popup
+        when(requestCode){
+            PERMISSION_CODE -> {
+                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                }
+                else {
+                    //permission from popup was denied
+                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+                    finish();
+
+                }
+            }
+        }
+    }
 
 
 
 
-//    private fun checklogin() {
-//        if(boo) {
-//            //phaicblack55@gmail.com
-//            if(auth!!.currentUser?.email =="p_sapthawee@kkumail.com" ){
-//                var i = Intent(this, AdminMain::class.java)
-//                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-//                startActivity(i)
-//            }
-//            else{
-//                var i = Intent(this, Student_Activity::class.java)
-//                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-//                startActivity(i)
-//            }
-//
-//        }
-//    }
+    private fun checklogin() {
+        if(boo) {
+            //phaicblack55@gmail.com
+            if(auth!!.currentUser?.email =="p_sapthawee@kkumail.com" ){
+                var i = Intent(this, AdminMain::class.java)
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(i)
+            }
+            else{
+                var i = Intent(this, Student_Activity::class.java)
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(i)
+            }
+
+        }
+    }
 
     private fun singOut() {
         auth.signOut()
@@ -106,41 +104,28 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    private fun updateUI(user: FirebaseUser?) {
-//        if (user == null) {
-//            // show.text = "No User"
-//        } else {
-//            // show.text = user.email.toString()
-//            checklogin()
-//        }
-//
-//    }
-private fun updateUI(user: FirebaseUser?) {
-    if (user != null) {
-        status.text = getString(R.string.google_status_fmt, user.email)
-        detail.text = getString(R.string.firebase_status_fmt, user.uid)
+    private fun updateUI(user: FirebaseUser?) {
+        if (user == null) {
+            // show.text = "No User"
+        } else {
+            // show.text = user.email.toString()
+            checklogin()
+        }
 
-        signInButton.visibility = View.GONE
-        signOutAndDisconnect.visibility = View.VISIBLE
-    } else {
-        status.setText(R.string.signed_out)
-        detail.text = null
-
-        signInButton.visibility = View.VISIBLE
-        signOutAndDisconnect.visibility = View.GONE
     }
-}
+
 
     private fun singIn() {
-        //singOut()
+        FirebaseAuth.getInstance().signOut();
+//        singOut()
 
-//        if(boo){
-//            checklogin()
-//        }
-//        else {
+        if(boo){
+            checklogin()
+        }
+        else {
             var signInInent = googleClient.signInIntent
             startActivityForResult(signInInent, 101)
-//        }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
