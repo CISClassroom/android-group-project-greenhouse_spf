@@ -17,7 +17,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.fragment_login.*
-import th.ac.kku.cis.mobileapp.stuactivity.AdminMain
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class MainActivity : AppCompatActivity() {

@@ -1,8 +1,6 @@
-package th.ac.kku.cis.mobileapp.stuactivity
+package th.ac.kku.cis.mobileapp.stuactivity.View
 
-import android.Manifest
-import android.content.pm.PackageManager
-import android.os.Build
+import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +8,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_admin_main.*
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class AdminMain : AppCompatActivity(){
@@ -33,6 +32,14 @@ class AdminMain : AppCompatActivity(){
             .build()
         googleClient = GoogleSignIn.getClient(this, gso)
         auth = FirebaseAuth.getInstance()
+
+        btsave.setOnClickListener {
+
+            var i = Intent(this, Save_Activity::class.java)
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(i)
+        }
+
     }
 
 

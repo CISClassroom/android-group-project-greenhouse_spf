@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_menu"
     android:id="@+id/rela"
-    tools:context=".AdminMain">
+    tools:context=".View.AdminMain">
 
     <GridLayout
         android:id="@+id/grid_menu"
@@ -58,6 +58,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/btsave"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -88,7 +89,7 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentBottom="true"
                     android:fontFamily="@font/thaisansneue_semi_bold"
-                    android:text="หอชาย 2"
+                    android:text="เพิ่มกิจกรรม"
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp" />
