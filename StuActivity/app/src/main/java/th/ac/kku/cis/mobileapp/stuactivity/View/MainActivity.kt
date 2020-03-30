@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
 
         if(boo){
             Toast.makeText(this, "boo", Toast.LENGTH_SHORT).show()
-            if(auth!!.currentUser?.email =="phaicblack55@gmail.com"){
+            if(auth!!.currentUser?.email =="phaicblack55@gmail.com" || auth!!.currentUser?.email =="atittaya_c@kkumail.com"){
                 Toast.makeText(this, "checklogin", Toast.LENGTH_SHORT).show()
                 var i = Intent(this, AdminMain::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
