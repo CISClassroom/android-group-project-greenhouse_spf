@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_menu"
     android:id="@+id/rela"
-    tools:context=".View.AdminMain">
+    tools:context=".AdminMain">
 
     <GridLayout
         android:id="@+id/grid_menu"
@@ -96,81 +96,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark_KKU"
-            app:cardCornerRadius="15dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/common_google_signin_btn_icon_light" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/thaisansneue_semi_bold"
-                    android:text="หอหญิง 3"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark_KKU"
-            app:cardCornerRadius="15dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/common_google_signin_btn_icon_light" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/thaisansneue_semi_bold"
-                    android:text="รายงาน"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
     </GridLayout>
 
     <Button
@@ -179,7 +104,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/grid_menu"
-        android:layout_marginTop="-8dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="273dp"
+        android:layout_marginTop="201dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="82dp"
         android:text="ออกจากระบบ" />
 
 </RelativeLayout>

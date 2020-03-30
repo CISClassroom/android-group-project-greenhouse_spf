@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.fragment_login.*
+import th.ac.kku.cis.mobileapp.stuactivity.AdminMain
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         login.setOnClickListener({ v -> singIn() })
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
@@ -83,9 +85,11 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun checklogin() {
-        if(boo) {
-            //phaicblack55@gmail.com
-            if(auth!!.currentUser?.email =="p_sapthawee@kkumail.com" ){
+
+        if(boo){
+            Toast.makeText(this, "boo", Toast.LENGTH_SHORT).show()
+            if(auth!!.currentUser?.email =="phaicblack55@gmail.com"){
+                Toast.makeText(this, "checklogin", Toast.LENGTH_SHORT).show()
                 var i = Intent(this, AdminMain::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
@@ -94,6 +98,7 @@ class MainActivity : AppCompatActivity() {
                 var i = Intent(this, Student_Activity::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
+
             }
 
         }
@@ -119,13 +124,14 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun singIn() {
-        FirebaseAuth.getInstance().signOut();
-//        singOut()
 
+        singOut()
         if(boo){
             checklogin()
+
         }
         else {
+
             var signInInent = googleClient.signInIntent
             startActivityForResult(signInInent, 101)
         }
@@ -154,7 +160,8 @@ class MainActivity : AppCompatActivity() {
                     val user = auth.currentUser
                     boo = true
                     updateUI(user)
-                } else {
+                }
+                else {
                     boo = false
                     updateUI(null)
                 }
