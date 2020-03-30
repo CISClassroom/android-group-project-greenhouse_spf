@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_menu"
     android:id="@+id/rela"
-    tools:context=".AdminMain">
+    tools:context=".View.AdminMain">
 
     <GridLayout
         android:id="@+id/grid_menu"

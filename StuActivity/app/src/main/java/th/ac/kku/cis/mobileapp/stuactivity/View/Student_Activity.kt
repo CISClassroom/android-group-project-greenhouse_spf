@@ -1,8 +1,9 @@
-package th.ac.kku.cis.mobileapp.stuactivity
+package th.ac.kku.cis.mobileapp.stuactivity.View
 
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class Student_Activity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {

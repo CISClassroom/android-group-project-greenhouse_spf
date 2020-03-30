@@ -1,4 +1,4 @@
-package th.ac.kku.cis.mobileapp.stuactivity
+package th.ac.kku.cis.mobileapp.stuactivity.View
 
 import android.Manifest
 import android.content.Intent
@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.fragment_login.*
+import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,6 +67,7 @@ class MainActivity : AppCompatActivity() {
         when(requestCode){
             PERMISSION_CODE -> {
                 if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+
                 }
                 else {
                     //permission from popup was denied
@@ -103,6 +105,7 @@ class MainActivity : AppCompatActivity() {
             updateUI(null)
         }
     }
+
 
     private fun updateUI(user: FirebaseUser?) {
         if (user == null) {
@@ -157,5 +160,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
     }
+
+
 
 }

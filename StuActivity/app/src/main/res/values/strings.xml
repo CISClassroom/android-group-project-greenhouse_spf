@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Save Even</string>
+    <string name="select_time">Select from time picker</string>
+    <string name="not_text"> </string>
+
+    <string-array name="number_nameAct">
+        <item>1 การพัฒนาศักยภาพตนเอง</item>
+        <item>2 การธำรงไว้ซึ่งสถาบันชาติ ศาสนา พระมหากษัตริย์ เสริมสร้างจิตสำนึกความภาคภูมิใจในมหาวิทยาลัยและคณะ</item>
+        <item>3 การเสริมสร้างจิตอาสา และจิตสาธารณะ</item>
+        <item>4 การสร้างคุณธรรมจริยธรรมและศีลธรรม</item>
+        <item>5 การอนุรักษ์ศิลปวัฒนธรรมไทยและภูมิปัญญาท้องถิ่น</item>
+    </string-array>
 </resources>
