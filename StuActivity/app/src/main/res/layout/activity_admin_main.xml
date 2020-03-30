@@ -45,11 +45,11 @@
                     app:srcCompat="@drawable/common_google_signin_btn_icon_light" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="138dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentBottom="true"
                     android:fontFamily="@font/thaisansneue_semi_bold"
-                    android:text="หอหญิง 1"
+                    android:text="รายชื่อกิจกรรม"
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp" />
