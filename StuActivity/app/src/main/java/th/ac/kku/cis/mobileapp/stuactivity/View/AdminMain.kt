@@ -3,6 +3,7 @@ package th.ac.kku.cis.mobileapp.stuactivity.View
 import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -33,6 +34,7 @@ class AdminMain : AppCompatActivity() {
         googleClient = GoogleSignIn.getClient(this, gso)
         auth = FirebaseAuth.getInstance()
 
+        val btn_signoutt: Button = findViewById(R.id.btn_signoutt)
         btn_signoutt.setOnClickListener({ v -> singOut() })
         btsave.setOnClickListener {
 
