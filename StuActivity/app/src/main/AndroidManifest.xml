@@ -25,6 +25,7 @@
 
         </activity>
         <activity android:name=".AdminMain"></activity>
+        <activity android:name=".View.Student_Activity"></activity>
     </application>
 
 </manifest>
