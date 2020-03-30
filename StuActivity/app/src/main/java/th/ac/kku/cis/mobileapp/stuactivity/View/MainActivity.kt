@@ -80,18 +80,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-
-
     private fun checklogin() {
 
         if(boo){
-            Toast.makeText(this, "boo", Toast.LENGTH_SHORT).show()
+
             if(auth!!.currentUser?.email =="phaicblack55@gmail.com"){
-                Toast.makeText(this, "checklogin", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Admin", Toast.LENGTH_SHORT).show()
                 var i = Intent(this, AdminMain::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
+
             }
             else{
                 var i = Intent(this, Student_Activity::class.java)
