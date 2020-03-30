@@ -29,6 +29,9 @@ class Save_Activity : AppCompatActivity()  {
             builder.setTitle("ยืนยันการเพิ่มกิจกรรม")
             builder.setMessage("คุณต้องการเพิ่มกิจกรรมหรือไม่ ?")
 
+            builder.setNegativeButton("ยกเลิก") { dialog, which ->
+                dialog.dismiss()
+            }
             builder.setPositiveButton("ยืนยัน") { dialog, which ->
                 var newData: modelsave = modelsave.create()
                 val obj = mDB.child("Data_item").push()
@@ -51,9 +54,7 @@ class Save_Activity : AppCompatActivity()  {
                 var i = Intent(this, AdminMain::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
-                builder.setPositiveButton("ยกเลิก") { dialog, which ->
-                    dialog.dismiss()
-                }
+
             }
 
 
