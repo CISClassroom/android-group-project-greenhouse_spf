@@ -65,7 +65,6 @@ class Save_Activity : AppCompatActivity()  {
 
         }
     }
-
         nameevent = findViewById(R.id.editText2)
         datestart = findViewById(R.id.editText4)
         timestart = findViewById(R.id.editText3)
@@ -76,7 +75,6 @@ class Save_Activity : AppCompatActivity()  {
         credit = findViewById(R.id.spinner2)
         close = findViewById(R.id.btn_close)
         save = findViewById(R.id.btn_save_act)
-
-
         }
     }
+}

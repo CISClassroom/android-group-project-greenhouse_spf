@@ -179,7 +179,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/grid_menu"
-        android:layout_marginTop="-8dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="93dp"
+        android:background="@drawable/shape_res"
         android:text="ออกจากระบบ" />
 
 </RelativeLayout>
