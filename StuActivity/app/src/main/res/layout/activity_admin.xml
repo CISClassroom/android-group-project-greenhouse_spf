@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_menu"
     android:id="@+id/rela"
-    tools:context=".View.AdminMain">
+    tools:context=".ViewAdmin.AdminMain">
 
     <GridLayout
         android:id="@+id/grid_menu"
@@ -19,6 +19,7 @@
         android:rowCount="2">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/btEvent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"

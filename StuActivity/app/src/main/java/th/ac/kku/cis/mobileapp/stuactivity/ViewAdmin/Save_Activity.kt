@@ -1,4 +1,4 @@
-package th.ac.kku.cis.mobileapp.stuactivity.View
+package th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -43,6 +43,7 @@ class Save_Activity : AppCompatActivity()  {
                 newData.endTime = endTime.text.toString()
                 newData.textAdress = textAdress.text.toString()
                 newData.textDetail = textDetail.text.toString()
+                newData.textUnit = textUnit.text.toString()
 
 
                 newData.id = obj.key

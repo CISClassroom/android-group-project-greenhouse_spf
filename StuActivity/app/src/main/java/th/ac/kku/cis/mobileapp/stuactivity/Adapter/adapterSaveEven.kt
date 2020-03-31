@@ -25,6 +25,7 @@ public class adapterSaveEven (val mCtx: Context,
         val tvendTime : TextView = v.findViewById(R.id.endTime)
         val tvtextAdress : TextView = v.findViewById(R.id.textAdress)
         val tvtextDetail : TextView = v.findViewById(R.id.textDetail)
+        val tvtextUnit : TextView = v.findViewById(R.id.textUnit)
 
         val modeldata :modelsave = items[position]
 
@@ -36,6 +37,7 @@ public class adapterSaveEven (val mCtx: Context,
         tvendTime.text = modeldata.endTime
         tvtextAdress.text = modeldata.textAdress
         tvtextDetail.text = modeldata.textDetail
+        tvtextUnit.text = modeldata.textUnit
 
         return v
     }

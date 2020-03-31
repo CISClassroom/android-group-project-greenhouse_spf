@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_login.*
 import th.ac.kku.cis.mobileapp.stuactivity.R
+import th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin.AdminMain
 
 class MainActivity : AppCompatActivity() {
 

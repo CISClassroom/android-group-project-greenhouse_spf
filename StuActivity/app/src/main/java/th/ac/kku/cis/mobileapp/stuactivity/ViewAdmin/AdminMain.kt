@@ -1,20 +1,17 @@
-package th.ac.kku.cis.mobileapp.stuactivity.View
+package th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_admin.*
 import th.ac.kku.cis.mobileapp.stuactivity.R
+import th.ac.kku.cis.mobileapp.stuactivity.View.MainActivity
 
 class AdminMain : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
@@ -48,7 +45,16 @@ class AdminMain : AppCompatActivity() {
         }
         val btlogout: Button = findViewById(R.id.btlogout)
         btlogout.setOnClickListener({ v -> singOut() })
+
+        btEvent.setOnClickListener {
+
+            var i = Intent(this, Listevent_Admin::class.java)
+            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(i)
+        }
     }
+
+
 
     private fun checklogin() {
         if (boo) {

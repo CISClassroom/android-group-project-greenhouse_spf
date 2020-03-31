@@ -13,12 +13,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ViewAdmin.Listevent_Admin"></activity>
+        <activity android:name=".ViewAdmin.Listadmin" />
+        <activity android:name=".ViewAdmin.ListAdmin" />
+        <activity android:name=".ViewAdmin.List_eventadmin" />
+        <activity android:name=".ListeventAdmin" />
+        <activity android:name=".ListEvent_Admin" />
         <activity android:name=".View.u_select_detail_show">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".View.MainActivity">
             <intent-filter>
@@ -27,8 +35,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.Save_Activity" />
-        <activity android:name=".View.AdminMain" />
+        <activity android:name=".ViewAdmin.Save_Activity" />
+        <activity android:name=".ViewAdmin.AdminMain" />
         <activity android:name=".View.Student_Activity" />
     </application>
 
