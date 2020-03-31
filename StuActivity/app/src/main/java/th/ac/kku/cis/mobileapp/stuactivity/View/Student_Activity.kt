@@ -4,35 +4,26 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.GoogleAuthProvider
+import kotlinx.android.synthetic.main.activity_admin_main.*
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class Student_Activity : AppCompatActivity(){
     lateinit var auth: FirebaseAuth
-    var boo:Boolean = false
+    lateinit var googleClient: GoogleSignInClient
+    var boo: Boolean = false
+    private val PERMISSION_CODE = 1000;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        setContentView(R.layout.activity_student)
-    }
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 101) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            try {
-                val account = task.getResult(ApiException::class.java)
-                firebaseAuth(account!!)
-                //FirebaseAuth(account)
-            } catch (e: ApiException) {
-                Log.i("Error OOP", e.toString())
-                boo = false
+        setContentView(R.layout.activity_student_main)
 
             }
         }
@@ -45,10 +36,22 @@ class Student_Activity : AppCompatActivity(){
                     val user = auth.currentUser
                     boo = true
 
-                } else {
-                    boo = false
+            var i = Intent(this, Save_Activity::class.java)
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(i)
+        }
+    }
+    private fun passproject() {
+        if (boo) {
+            var i = Intent(this, MainActivity::class.java)
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(i)
+        }
+    }
+    private fun singOut() {
 
-                }
-            }
+        auth.signOut()
+        boo = true
+        passproject()
     }
 }

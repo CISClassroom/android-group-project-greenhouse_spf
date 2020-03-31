@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_save_detail.*
 import th.ac.kku.cis.mobileapp.stuactivity.Model.modelsave
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
-class Save_Activity : AppCompatActivity()  {
+class Save_Activity : AppCompatActivity() {
     lateinit var mDB: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +40,7 @@ class Save_Activity : AppCompatActivity()  {
                 var newData: modelsave = modelsave.create()
                 val obj = mDB.child("Data_item").push()
                 newData.nameEvent = nameEvent.text.toString()
-               // newData.btSave = btSave.text.toString()
+                // newData.btSave = btSave.text.toString()
                 newData.startDay = startDay.text.toString()
                 newData.startTime = startTime.text.toString()
                 newData.endDay = endDay.text.toString()
@@ -54,21 +54,32 @@ class Save_Activity : AppCompatActivity()  {
                 Toast.makeText(applicationContext, "เพิ่มกิจกรรมเรียบร้อยแล้ว", Toast.LENGTH_SHORT)
                     .show()
 
+                btn_close.setOnClickListener {
+                    var i = Intent(this, AdminMain::class.java)
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(i)
+                    builder.setPositiveButton("ยกเลิก") { dialog, which ->
+                        dialog.dismiss()
+                    }
+                }
 
-                var i = Intent(this,AdminMain::class.java)
-                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                startActivity(i)
+                val dialog: AlertDialog = builder.create()
+                dialog.show()
+
 
             }
-
-
-
-            val dialog: AlertDialog = builder.create()
-            dialog.show()
-
-
-
         }
+        /*nameevent = findViewById(R.id.editText2)
+        datestart = findViewById(R.id.editText4)
+        timestart = findViewById(R.id.editText3)
+        dateend = findViewById(R.id.editText5)
+        timeend = findViewById(R.id.editText6)
+        location = findViewById(R.id.editText7)
+        detailevent = findViewById(R.id.editText8)
+        credit = findViewById(R.id.spinner2)
+        close = findViewById(R.id.btn_close)
+        save = findViewById(R.id.btn_save_act)
+        }
+    }*/
     }
-
 }
