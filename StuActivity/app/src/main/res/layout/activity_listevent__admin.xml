@@ -35,7 +35,7 @@
                     android:paddingLeft="20dp"
                     android:text="รายชื่อกิจกรรม"
                     android:textColor="@android:color/background_light"
-                    android:textSize="30sp" />
+                    android:textSize="34sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -91,7 +91,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="50dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -140,10 +140,11 @@
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="150dp"
+                    android:paddingLeft="160dp"
                     android:text="หน่วยกิตด้านที่"
                     android:textColor="@color/common_google_signin_btn_text_dark_default"
-                    android:textSize="24sp" />
+                    android:textSize="30sp"
+                    tools:fontFamily="@font/thaisansneue_semi_bold" />
 
 
             </LinearLayout>
