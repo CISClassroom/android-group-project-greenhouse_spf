@@ -37,7 +37,6 @@ class Student_Activity : AppCompatActivity(){
             }
         }
     }
-
     private fun firebaseAuth(account: GoogleSignInAccount) {
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         auth.signInWithCredential(credential)
