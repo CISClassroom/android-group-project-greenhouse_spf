@@ -5,17 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import kotlinx.android.synthetic.main.activity_admin_main.*
+import kotlinx.android.synthetic.main.activity_admin.*
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class AdminMain : AppCompatActivity(){
@@ -29,7 +25,7 @@ class AdminMain : AppCompatActivity(){
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        setContentView(R.layout.activity_admin_main)
+        setContentView(R.layout.activity_admin)
 
 
 
@@ -37,9 +33,10 @@ class AdminMain : AppCompatActivity(){
         btsave.setOnClickListener {
 
             var i = Intent(this, Save_Activity::class.java)
-            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(i)
         }
+
 
 
 
