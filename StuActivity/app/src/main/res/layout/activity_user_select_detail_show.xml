@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.u_select_detail_show">
+
+    <Button
+        android:id="@+id/btSave"
+        android:layout_width="79dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        android:text="เข้าร่วม"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nameEvent"
+        android:layout_width="305dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="136dp"
+        android:ems="10"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        android:hint="เพิ่มชื่อกิจกรรม"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/textAdress"
+        android:layout_width="307dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        android:hint="สถานที่"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/endTime"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="@+id/endDay"
+        app:layout_constraintTop_toBottomOf="@+id/endDay" />
+
+    <EditText
+        android:id="@+id/startDay"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        android:hint="วันที่"
+        android:inputType="date"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/startTime"
+        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintStart_toStartOf="@+id/nameEvent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEvent" />
+
+    <EditText
+        android:id="@+id/startTime"
+        android:layout_width="90dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:hint="เวลา"
+        android:inputType="time"
+        android:textSize="24sp"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        app:layout_constraintEnd_toEndOf="@+id/nameEvent"
+        app:layout_constraintTop_toTopOf="@+id/startDay" />
+
+    <EditText
+        android:id="@+id/endDay"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        android:hint="วันที่"
+        android:inputType="date"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/endTime"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/startDay"
+        app:layout_constraintTop_toBottomOf="@+id/startDay" />
+
+    <EditText
+        android:id="@+id/endTime"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="เวลา"
+        android:inputType="time"
+        android:textSize="24sp"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        app:layout_constraintEnd_toEndOf="@+id/startTime"
+        app:layout_constraintTop_toTopOf="@+id/endDay" />
+
+    <EditText
+        android:id="@+id/textDetail"
+        android:layout_width="306dp"
+        android:layout_height="199dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="รายละเอียด"
+        android:inputType="textMultiLine"
+        android:textSize="24sp"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        app:layout_constraintEnd_toEndOf="@+id/textAdress"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textAdress"
+        app:layout_constraintTop_toBottomOf="@+id/textAdress" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="417dp"
+        android:layout_height="101dp"
+        android:background="@color/colorPrimaryDark_KKU"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/btSave"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btSave"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:text="เริ่ม"
+        android:textSize="24sp"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        app:layout_constraintBottom_toBottomOf="@+id/startDay"
+        app:layout_constraintEnd_toStartOf="@+id/startDay"
+        app:layout_constraintTop_toTopOf="@+id/startDay"
+        app:layout_constraintVertical_bias="0.521" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="จบ"
+        android:textSize="24sp"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        app:layout_constraintBottom_toBottomOf="@+id/endDay"
+        app:layout_constraintEnd_toStartOf="@+id/endDay"
+        app:layout_constraintTop_toTopOf="@+id/endDay" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="หน่วยกิตด้านที่"
+        android:textSize="24sp"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        app:layout_constraintEnd_toStartOf="@+id/spinner2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textDetail"
+        app:layout_constraintTop_toBottomOf="@+id/textDetail" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:fontFamily="@font/thaisansneue_semi_bold"
+        android:spinnerMode="dropdown"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/textDetail"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
