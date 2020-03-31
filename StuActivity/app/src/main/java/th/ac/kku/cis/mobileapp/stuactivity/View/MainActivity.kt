@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
 
         if(boo){
 
-            if(auth!!.currentUser?.email =="phaicblack55@gmail.com"||auth!!.currentUser?.email =="p_sapthawee@kkumail.com"){
+            if(auth!!.currentUser?.email =="phaicblack55@gmail.com"||auth!!.currentUser?.email =="p_sapthawee@kkumail.com" ||auth!!.currentUser?.email =="atittaya_c@kkumail.com"){
                 Toast.makeText(this, "Admin", Toast.LENGTH_SHORT).show()
                 var i = Intent(this, AdminMain::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -172,7 +172,4 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onKeyDown(keyCode, event)
     }
-
-
-
 }
