@@ -14,6 +14,7 @@ import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class Save_Activity : AppCompatActivity() {
     lateinit var mDB: DatabaseReference
+    private val creadits = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +25,7 @@ class Save_Activity : AppCompatActivity() {
         setContentView(R.layout.activity_save_detail)
         mDB = FirebaseDatabase.getInstance().reference
 
-        btn_close.setOnClickListener{
+        btn_close.setOnClickListener {
             onBackPressed()
         }
 
@@ -48,7 +49,6 @@ class Save_Activity : AppCompatActivity() {
                 newData.textAdress = textAdress.text.toString()
                 newData.textDetail = textDetail.text.toString()
 
-
                 newData.id = obj.key
                 obj.setValue(newData)
                 Toast.makeText(applicationContext, "เพิ่มกิจกรรมเรียบร้อยแล้ว", Toast.LENGTH_SHORT)
@@ -62,24 +62,9 @@ class Save_Activity : AppCompatActivity() {
                         dialog.dismiss()
                     }
                 }
-
                 val dialog: AlertDialog = builder.create()
                 dialog.show()
-
-
             }
         }
-        /*nameevent = findViewById(R.id.editText2)
-        datestart = findViewById(R.id.editText4)
-        timestart = findViewById(R.id.editText3)
-        dateend = findViewById(R.id.editText5)
-        timeend = findViewById(R.id.editText6)
-        location = findViewById(R.id.editText7)
-        detailevent = findViewById(R.id.editText8)
-        credit = findViewById(R.id.spinner2)
-        close = findViewById(R.id.btn_close)
-        save = findViewById(R.id.btn_save_act)
-        }
-    }*/
     }
 }

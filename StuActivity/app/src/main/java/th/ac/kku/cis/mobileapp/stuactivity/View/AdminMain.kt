@@ -8,6 +8,8 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
@@ -26,7 +28,7 @@ class AdminMain : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-        setContentView(R.layout.activity_admin_main)
+        setContentView(R.layout.activity_admin)
 
 
         var gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -36,7 +38,7 @@ class AdminMain : AppCompatActivity() {
         googleClient = GoogleSignIn.getClient(this, gso)
         auth = FirebaseAuth.getInstance()
 
-        val btn_signoutt: Button = findViewById(R.id.btn_signoutt)
+        val btn_signoutt: Button = findViewById(R.id.btlogout)
         btn_signoutt.setOnClickListener({ v -> singOut() })
         btsave.setOnClickListener {
 
