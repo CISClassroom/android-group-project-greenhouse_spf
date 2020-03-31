@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.fragment_save_detail.*
+import kotlinx.android.synthetic.main.activity_save_detail.*
 import th.ac.kku.cis.mobileapp.stuactivity.Model.modelsave
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
@@ -21,14 +21,21 @@ class Save_Activity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-        setContentView(R.layout.fragment_save_detail)
+        setContentView(R.layout.activity_save_detail)
         mDB = FirebaseDatabase.getInstance().reference
+
+        btn_close.setOnClickListener{
+            onBackPressed()
+        }
 
         btSave.setOnClickListener {
             val builder = AlertDialog.Builder(this@Save_Activity)
             builder.setTitle("ยืนยันการเพิ่มกิจกรรม")
             builder.setMessage("คุณต้องการเพิ่มกิจกรรมหรือไม่ ?")
 
+            builder.setNegativeButton("ยกเลิก") { dialog, which ->
+                dialog.dismiss()
+            }
             builder.setPositiveButton("ยืนยัน") { dialog, which ->
                 var newData: modelsave = modelsave.create()
                 val obj = mDB.child("Data_item").push()

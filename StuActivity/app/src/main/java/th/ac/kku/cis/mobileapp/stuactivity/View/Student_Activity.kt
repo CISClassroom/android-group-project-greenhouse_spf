@@ -2,6 +2,7 @@ package th.ac.kku.cis.mobileapp.stuactivity.View
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity

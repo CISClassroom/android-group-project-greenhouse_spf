@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.WindowManager
 import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -16,7 +17,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.activity_login.*
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class MainActivity : AppCompatActivity() {
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        setContentView(R.layout.fragment_login)
+        setContentView(R.layout.activity_login)
 
         auth = FirebaseAuth.getInstance()
 
@@ -80,9 +81,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-
-
     private fun checklogin() {
 
         if(boo){
@@ -92,9 +90,11 @@ class MainActivity : AppCompatActivity() {
                 var i = Intent(this, AdminMain::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
+
             }
             else{
-                var i = Intent(this, Student_Activity::class.java)
+                Toast.makeText(this, "Client", Toast.LENGTH_SHORT).show()
+                var i = Intent(this,Student_Activity::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
 
@@ -166,7 +166,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
     }
-
-
-
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            moveTaskToBack(true)
+        }
+        return super.onKeyDown(keyCode, event)
+    }
 }

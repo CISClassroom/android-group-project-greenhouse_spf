@@ -18,12 +18,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".View.Save_Activity">
-
-
-        </activity>
+        <activity android:name=".View.Save_Activity"></activity>
         <activity android:name=".View.AdminMain"></activity>
         <activity android:name=".View.Student_Activity"></activity>
     </application>
