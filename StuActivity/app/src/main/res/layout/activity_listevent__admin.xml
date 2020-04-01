@@ -29,6 +29,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/nameEvent1"
                     android:layout_width="302dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/thaisansneue_semi_bold"
@@ -53,7 +54,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/startDay1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -73,7 +74,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/textView13"
+                        android:id="@+id/startTime1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -105,7 +106,7 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/textView15"
+                            android:id="@+id/endDay1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -125,7 +126,7 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/textView17"
+                            android:id="@+id/endTime1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -155,7 +156,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/textUnit1"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:fontFamily="@font/thaisansneue_semi_bold"

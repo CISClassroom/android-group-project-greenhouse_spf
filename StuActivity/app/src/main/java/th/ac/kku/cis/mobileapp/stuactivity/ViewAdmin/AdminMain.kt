@@ -48,7 +48,7 @@ class AdminMain : AppCompatActivity() {
 
         btEvent.setOnClickListener {
 
-            var i = Intent(this, Listevent_Admin::class.java)
+            var i = Intent(this, ListviewEvent::class.java)
             i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(i)
         }

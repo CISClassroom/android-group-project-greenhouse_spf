@@ -17,15 +17,15 @@ public class adapterSaveEven (val mCtx: Context,
         val layout: LayoutInflater = LayoutInflater.from(mCtx)
 
         val v: View = layout.inflate(resource,null)
-        val tvnameEvent : TextView = v.findViewById(R.id.nameEvent )
+        val tvnameEvent : TextView = v.findViewById(R.id.nameEvent1 )
        // val tvbtSave : TextView = v.findViewById(R.id.btSave)
-        val tvstartDay : TextView = v.findViewById(R.id.startDay)
-        val tvstartTime : TextView = v.findViewById(R.id.startTime)
-        val tvendDay : TextView = v.findViewById(R.id.endDay)
-        val tvendTime : TextView = v.findViewById(R.id.endTime)
-        val tvtextAdress : TextView = v.findViewById(R.id.textAdress)
-        val tvtextDetail : TextView = v.findViewById(R.id.textDetail)
-        val tvtextUnit : TextView = v.findViewById(R.id.textUnit)
+        val tvstartDay : TextView = v.findViewById(R.id.startDay1)
+        val tvstartTime : TextView = v.findViewById(R.id.startTime1)
+        val tvendDay : TextView = v.findViewById(R.id.endDay1)
+        val tvendTime : TextView = v.findViewById(R.id.endTime1)
+        //val tvtextAdress : TextView = v.findViewById(R.id.textAdress1)
+       // val tvtextDetail : TextView = v.findViewById(R.id.textDetail1)
+        val tvtextUnit : TextView = v.findViewById(R.id.textUnit1)
 
         val modeldata :modelsave = items[position]
 
@@ -35,8 +35,8 @@ public class adapterSaveEven (val mCtx: Context,
         tvstartTime.text = modeldata.startTime
         tvendDay.text = modeldata.endDay
         tvendTime.text = modeldata.endTime
-        tvtextAdress.text = modeldata.textAdress
-        tvtextDetail.text = modeldata.textDetail
+       // tvtextAdress.text = modeldata.textAdress
+       // tvtextDetail.text = modeldata.textDetail
         tvtextUnit.text = modeldata.textUnit
 
         return v
