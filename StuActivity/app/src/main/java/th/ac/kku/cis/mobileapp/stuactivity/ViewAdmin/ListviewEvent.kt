@@ -4,10 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import android.widget.Button
 import android.widget.ListView
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.firebase.auth.FirebaseAuth
+import android.widget.Toast
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_listview_event.*
 import th.ac.kku.cis.mobileapp.stuactivity.Adapter.adapterSaveEven
@@ -54,6 +52,15 @@ class ListviewEvent : AppCompatActivity() {
             }
         }
         )
+        listview.setOnItemClickListener { parent, view, position, id ->
+            var i = Intent(this, Event::class.java)
+            i.putExtra("id",items[position].id)
+            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(i)
+               // Toast.makeText(this,items[position].textDetail,Toast.LENGTH_LONG).show()
+
+            }
+
         btback.setOnClickListener {
 
             var i = Intent(this, AdminMain::class.java)
@@ -63,3 +70,4 @@ class ListviewEvent : AppCompatActivity() {
     }
 
     }
+

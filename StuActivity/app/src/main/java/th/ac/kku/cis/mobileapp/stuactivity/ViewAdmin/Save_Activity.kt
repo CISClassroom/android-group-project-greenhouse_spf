@@ -36,7 +36,6 @@ class Save_Activity : AppCompatActivity()  {
                 var newData: modelsave = modelsave.create()
                 val obj = mDB.child("Data_item").push()
                 newData.nameEvent = nameEvent.text.toString()
-                // newData.btSave = btSave.text.toString()
                 newData.startDay = startDay.text.toString()
                 newData.startTime = startTime.text.toString()
                 newData.endDay = endDay.text.toString()

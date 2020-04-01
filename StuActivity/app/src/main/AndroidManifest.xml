@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Event"></activity>
+        <activity android:name=".ViewAdmin.Event"></activity>
         <activity android:name=".ViewAdmin.ListviewEvent" />
         <activity android:name=".ViewAdmin.Listevent_Admin" />
         <activity android:name=".ViewAdmin.Listadmin" />

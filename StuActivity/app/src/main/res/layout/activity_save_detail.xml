@@ -63,7 +63,7 @@
         android:layout_height="41dp"
         android:ems="10"
         android:hint="เวลา"
-        android:inputType="time"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/nameEvent"
         app:layout_constraintTop_toTopOf="@+id/startDay" />
 
@@ -86,7 +86,7 @@
         android:layout_height="48dp"
         android:ems="10"
         android:hint="เวลา"
-        android:inputType="time"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/startTime"
         app:layout_constraintTop_toTopOf="@+id/endDay" />
 
@@ -151,7 +151,7 @@
         android:layout_height="47dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="หน่วยกิตด้วนที่"
+        android:hint="หน่วยกิตด้านที่"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"
