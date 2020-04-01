@@ -11,6 +11,8 @@
         android:layout_width="79dp"
         android:layout_height="43dp"
         android:layout_marginTop="24dp"
+        android:background="@drawable/custom_btn_login"
+        android:fontFamily="@font/thaisansneue_semi_bold"
         android:text="บันทึก"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.951"
@@ -138,7 +140,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:text="จบ"
+        android:text="สิ้นสุด"
         app:layout_constraintBottom_toBottomOf="@+id/endDay"
         app:layout_constraintEnd_toStartOf="@+id/endDay"
         app:layout_constraintTop_toTopOf="@+id/endDay" />

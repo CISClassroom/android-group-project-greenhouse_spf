@@ -111,6 +111,7 @@
         android:layout_marginStart="183dp"
         android:layout_marginTop="226dp"
         android:layout_marginEnd="58dp"
+        android:background="@drawable/custom_btn_login"
         android:fontFamily="@font/thaisansneue_semi_bold"
         android:text="ออกจากระบบ"
         android:textSize="18sp" />

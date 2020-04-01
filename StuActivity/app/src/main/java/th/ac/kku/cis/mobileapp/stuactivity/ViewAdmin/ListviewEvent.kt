@@ -18,8 +18,8 @@ class ListviewEvent : AppCompatActivity() {
     lateinit var listview: ListView
     lateinit var ref: DatabaseReference
     lateinit var items:MutableList<modelsave>
-    lateinit var auth: FirebaseAuth
-    var boo:Boolean = false
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +29,7 @@ class ListviewEvent : AppCompatActivity() {
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
 
         listview = findViewById(R.id.listviewAdmin)
         items = mutableListOf()
@@ -49,8 +50,7 @@ class ListviewEvent : AppCompatActivity() {
                     listview.adapter = adapter
                 }
 
-                //val logout: Button = findViewById(R.id.logout)
-               // logout.setOnClickListener({ v -> singOut() })
+
             }
         }
         )
@@ -61,16 +61,5 @@ class ListviewEvent : AppCompatActivity() {
             startActivity(i)
         }
     }
-   /* private fun passproject() {
-        if (boo) {
-            var i = Intent(this, MainActivity::class.java)
-            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(i)
-        }
 
-    }
-    private fun singOut() {
-        auth.signOut()
-        boo = true
-        passproject()*/
     }
