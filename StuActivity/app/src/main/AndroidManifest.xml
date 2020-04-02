@@ -40,6 +40,7 @@
         <activity android:name=".ViewAdmin.Save_Activity" />
         <activity android:name=".ViewAdmin.AdminMain" />
         <activity android:name=".View.Student_Activity" />
+
     </application>
 
 </manifest>

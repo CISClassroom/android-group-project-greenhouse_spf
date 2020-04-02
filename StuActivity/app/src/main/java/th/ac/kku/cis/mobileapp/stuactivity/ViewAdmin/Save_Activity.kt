@@ -3,6 +3,7 @@ package th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import th.ac.kku.cis.mobileapp.stuactivity.Model.modelsave
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class Save_Activity : AppCompatActivity()  {
+    private val TAG = "logcat_status"
     lateinit var mDB: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,7 +67,7 @@ class Save_Activity : AppCompatActivity()  {
         }
 
         btn_close.setOnClickListener {
-
+            Log.i(TAG,"Close_add_activity")
             var i = Intent(this, AdminMain::class.java)
             i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(i)

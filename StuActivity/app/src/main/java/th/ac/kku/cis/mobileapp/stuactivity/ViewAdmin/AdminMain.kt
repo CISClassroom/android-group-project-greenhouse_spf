@@ -1,6 +1,7 @@
 package th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin
 
 import android.content.Intent
+import android.nfc.Tag
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
@@ -14,6 +15,7 @@ import th.ac.kku.cis.mobileapp.stuactivity.R
 import th.ac.kku.cis.mobileapp.stuactivity.View.MainActivity
 
 class AdminMain : AppCompatActivity() {
+    var TAG = "logcat_status"
     lateinit var auth: FirebaseAuth
     lateinit var googleClient: GoogleSignInClient
     var boo: Boolean = false
@@ -42,6 +44,7 @@ class AdminMain : AppCompatActivity() {
             var i = Intent(this, Save_Activity::class.java)
             i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(i)
+            Log.i(TAG,"Add_Activity")
         }
         val btlogout: Button = findViewById(R.id.btlogout)
         btlogout.setOnClickListener({ v -> singOut() })
@@ -72,9 +75,10 @@ class AdminMain : AppCompatActivity() {
         }
     }
         private fun singOut() {
-
+            Log.i(TAG,"LogOut")
             auth.signOut()
             boo = true
             passproject()
+
         }
     }
