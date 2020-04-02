@@ -3,6 +3,7 @@ package th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
 import android.widget.ListView
 import android.widget.Toast
@@ -17,10 +18,12 @@ class ListviewEvent : AppCompatActivity() {
     lateinit var listview: ListView
     lateinit var ref: DatabaseReference
     lateinit var items:MutableList<modelsave>
+    private val TAG = "logcat_status"
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listview_event)
         if (supportActionBar != null)
@@ -47,6 +50,7 @@ class ListviewEvent : AppCompatActivity() {
                     }
                     val adapter = adapterSaveEven(this@ListviewEvent,R.layout.activity_listevent__admin ,items)
                     listview.adapter = adapter
+
                 }
 
 

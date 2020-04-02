@@ -1,28 +1,32 @@
 package th.ac.kku.cis.mobileapp.stuactivity.View
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
+import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_listview_event.*
 import th.ac.kku.cis.mobileapp.stuactivity.Adapter.Events_Adapter
+import th.ac.kku.cis.mobileapp.stuactivity.Adapter.adapterSaveEven
 import th.ac.kku.cis.mobileapp.stuactivity.Model.Event
+import th.ac.kku.cis.mobileapp.stuactivity.Model.modelsave
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
 
 class Student_Activity : AppCompatActivity() {
 
     private val TAG = "logcat_status"
-    private lateinit var mRecyclerView : RecyclerView
-    private lateinit var  mDatabaseRef : DatabaseReference
+    private lateinit var mRecyclerView : ListView
     private lateinit var  mEventDatabaseRef : DatabaseReference
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var mFirebaseDatabase: FirebaseDatabase
 
-    private val items : MutableList<Event> = mutableListOf()
+    lateinit var items : MutableList<modelsave>
 
 
 
@@ -34,7 +38,7 @@ class Student_Activity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_student)
 
-        mRecyclerView = findViewById(R.id.list_recycler_view)
+
 
         //Dummy
 //        val excamplelist = generateDammyList(10)
@@ -66,7 +70,8 @@ class Student_Activity : AppCompatActivity() {
     }
 
     private fun bindingData() {
-        var sessionId = getIntent().getStringExtra("id");
+        mRecyclerView = findViewById(R.id.list_recycler_view)
+        items = mutableListOf()
         mEventDatabaseRef = FirebaseDatabase.getInstance().getReference("Data_item")
         mEventDatabaseRef!!.addValueEventListener(object :ValueEventListener{
 
@@ -77,32 +82,32 @@ class Student_Activity : AppCompatActivity() {
 
             override fun onDataChange(p0: DataSnapshot) {
                 if(p0!!.exists()){
+                    items.clear()
                     for (e in p0.children){
-                        Log.i(TAG,"items $items")
-                        items.clear()
-                        val rec = e.getValue(Event::class.java)
-                        items.add(rec!! as Event)
+                        val rec = e.getValue(modelsave::class.java)
+                        items.add(rec!!)
                     }
-                    val adapter = Events_Adapter(this@Student_Activity,R.layout.list_item,items)
+                    val adapter = adapterSaveEven(this@Student_Activity,R.layout.activity_listevent__admin ,items)
                     mRecyclerView.adapter = adapter
-                    Log.i(TAG,"mRecyclerView $mRecyclerView")
-                    Log.i(TAG,"adapter $adapter")
+
                 }
-                
+
 
             }
 
         })
-//        mRecyclerView.setOnItemClickListener{ parent, view, position, id ->
-//            var i = Intent(this, Event::class.java)
-//            i.putExtra("id",items[position].id)
-//            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-//            startActivity(i)
-//
-//        }
+        mRecyclerView.setOnItemClickListener{ parent, view, position, id ->
+            var i = Intent(this,Studen_selectdata::class.java)
+            i.putExtra("id",items[position].id)
+            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(i)
+            Toast.makeText(this,items[position].textDetail,Toast.LENGTH_LONG).show()
+            Log.i(TAG,"show "+items[position].textDetail)
 
+        }
+//
 //        btback.setOnClickListener {
-//            var i = Intent(this, AdminMain::class.java)
+//            var i = Intent(this, Student_Activity::class.java)
 //            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
 //            startActivity(i)
 //        }

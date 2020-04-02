@@ -9,6 +9,9 @@ import android.widget.Toast
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_event.*
 import kotlinx.android.synthetic.main.activity_listevent__admin.*
+import kotlinx.android.synthetic.main.activity_listevent__admin.endDay
+import kotlinx.android.synthetic.main.activity_listevent__admin.startDay
+import kotlinx.android.synthetic.main.activity_user_select_detail_show.*
 import th.ac.kku.cis.mobileapp.stuactivity.Adapter.adapterSaveEven
 import th.ac.kku.cis.mobileapp.stuactivity.Model.modelsave
 import th.ac.kku.cis.mobileapp.stuactivity.R
@@ -42,6 +45,8 @@ class u_select_detail_show : AppCompatActivity() {
                     Adress.text = p0.child("textAdress").value.toString()
                     Unitgroup.text = p0.child("textUnit").value.toString()
                     detail.text = p0.child("textDetail").value.toString()
+
+
                 }
             }
         }

@@ -3,6 +3,7 @@ package th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
 import android.widget.ListView
 import android.widget.Toast
@@ -15,6 +16,7 @@ import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class Event : AppCompatActivity() {
     lateinit var ref: DatabaseReference
+    private val TAG = "adminview"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

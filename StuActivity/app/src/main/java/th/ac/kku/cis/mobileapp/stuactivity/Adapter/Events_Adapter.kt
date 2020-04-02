@@ -11,9 +11,12 @@ import th.ac.kku.cis.mobileapp.stuactivity.Model.Event
 import th.ac.kku.cis.mobileapp.stuactivity.Model.modelsave
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
-class Events_Adapter(val mCtx: Context,var resource:Int,private val items:List<Event>): RecyclerView.Adapter<Events_Adapter.EventViewHolder>(){
+class Events_Adapter(val mCtx: Context,
+                     var resource:Int,
+                     private val items:List<Event>): RecyclerView.Adapter<Events_Adapter.EventViewHolder>(){
     private val TAG = "Comic"
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
+        val layout: LayoutInflater = LayoutInflater.from(mCtx)
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item,
         parent,false)
         return EventViewHolder(itemView)
@@ -29,9 +32,7 @@ class Events_Adapter(val mCtx: Context,var resource:Int,private val items:List<E
         holder.endDay.text = currentItem.endDay
         holder.textUnit.text = currentItem.textUnit
 
-        holder.itemView.setOnClickListener{
 
-        }
 
     }
 

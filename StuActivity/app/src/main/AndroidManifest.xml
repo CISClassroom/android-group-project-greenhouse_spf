@@ -16,10 +16,10 @@
         <activity android:name=".ViewAdmin.Event"></activity>
         <activity android:name=".ViewAdmin.ListviewEvent" />
         <activity android:name=".ViewAdmin.Listevent_Admin" />
-        <activity android:name=".ViewAdmin.Listadmin" />
+        <activity android:name=".ViewAdmin.Studen_selectdata" />
         <activity android:name=".ViewAdmin.ListAdmin" />
         <activity android:name=".ViewAdmin.List_eventadmin" />
-        <activity android:name=".ListeventAdmin" />
+        <activity android:name=".list_item" />
         <activity android:name=".ListEvent_Admin" />
         <activity android:name=".View.u_select_detail_show">
 
