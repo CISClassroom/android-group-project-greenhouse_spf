@@ -30,6 +30,7 @@
         <activity android:name=".View.Save_Activity" />
         <activity android:name=".View.AdminMain" />
         <activity android:name=".View.Student_Activity" />
+
     </application>
 
 </manifest>

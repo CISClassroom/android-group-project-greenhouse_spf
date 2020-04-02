@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.WindowManager
 import android.widget.Toast
@@ -21,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import th.ac.kku.cis.mobileapp.stuactivity.R
 
 class MainActivity : AppCompatActivity() {
-
+    private var TAG = "logmain"
     lateinit var auth: FirebaseAuth
     lateinit var googleClient: GoogleSignInClient
     var boo:Boolean = false
@@ -90,6 +91,7 @@ class MainActivity : AppCompatActivity() {
                 var i = Intent(this, AdminMain::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
+                Log.i(TAG,"ADMIN_LOGIN")
 
             }
             else{
@@ -97,9 +99,9 @@ class MainActivity : AppCompatActivity() {
                 var i = Intent(this,Student_Activity::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
+                Log.i(TAG,"USER_LOGIN")
 
             }
-
         }
     }
 
@@ -123,11 +125,10 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun singIn() {
-
+        Log.i(TAG,"LOGIN")
         singOut()
         if(boo){
             checklogin()
-
         }
         else {
 
