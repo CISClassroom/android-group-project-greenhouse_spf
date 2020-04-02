@@ -54,7 +54,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/startDay1"
+                        android:id="@+id/startDay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -76,7 +76,7 @@
                     <TextView
                         android:id="@+id/startTime1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:paddingLeft="20dp"
                         android:text="0"
@@ -106,7 +106,7 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/endDay1"
+                            android:id="@+id/endDay"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
