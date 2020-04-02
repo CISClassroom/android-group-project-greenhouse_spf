@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
 
             }
             else{
-                Toast.makeText(this, "Client", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Student", Toast.LENGTH_SHORT).show()
                 var i = Intent(this,Student_Activity::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
