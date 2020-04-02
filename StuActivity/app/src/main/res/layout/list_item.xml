@@ -1,38 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="381dp"
-        android:layout_height="124dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_marginTop="16dp"
-        app:cardBackgroundColor="@color/colorPrimaryDark_KKU"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="14dp"
+    android:layout_marginRight="14dp"
+    app:cardBackgroundColor="@color/colorPrimaryDark_KKU"
+    app:cardCornerRadius="15dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="303dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="302dp"
+                    android:id="@+id/Activity_name"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/thaisansneue_semi_bold"
                     android:paddingLeft="20dp"
+                    android:paddingTop="5dp"
                     android:text="รายชื่อกิจกรรม"
                     android:textColor="@android:color/background_light"
                     android:textSize="30sp" />
@@ -49,19 +46,21 @@
 
                         <TextView
                             android:id="@+id/Start"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
                             android:layout_gravity="left"
                             android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
                             android:text="Start"
                             android:textColor="@android:color/background_light" />
 
                         <TextView
                             android:id="@+id/End"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
                             android:layout_gravity="left"
                             android:paddingLeft="20dp"
+                            android:paddingTop="2dp"
                             android:text="End"
                             android:textColor="@android:color/background_light" />
                     </LinearLayout>
@@ -73,62 +72,68 @@
 
                         <TextView
                             android:id="@+id/time_start"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
                             android:layout_gravity="left"
                             android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
                             android:text="Time"
                             android:textColor="@android:color/background_light" />
 
                         <TextView
                             android:id="@+id/time_end"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
                             android:layout_gravity="left"
                             android:paddingLeft="20dp"
+                            android:paddingTop="2dp"
                             android:text="Time"
                             android:textColor="@android:color/background_light" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="200dp"
+                        android:layout_width="166dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/textView6"
-                            android:layout_width="201dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:fontFamily="@font/thaisansneue_semi_bold"
-                            android:gravity="right"
-                            android:paddingLeft="20dp"
-                            android:paddingTop="40dp"
+                            android:gravity="center"
+                            android:paddingTop="35dp"
                             android:text="หน่วยกิตด้านที่"
                             android:textColor="@android:color/background_light"
                             android:textSize="24sp" />
 
+
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/Unit_Activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:fontFamily="@font/thaisansneue_semi_bold"
+                        android:gravity="center"
+
+                        android:text="1"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="90dp" />
 
 
                 </LinearLayout>
 
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/thaisansneue_semi_bold"
-                    android:gravity="center"
-                    android:text="1"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="90dp" />
-            </LinearLayout>
+
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

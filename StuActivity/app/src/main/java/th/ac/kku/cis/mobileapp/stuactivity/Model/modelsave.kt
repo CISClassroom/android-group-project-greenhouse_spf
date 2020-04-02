@@ -13,5 +13,5 @@ class modelsave {
     var endTime:String?=null
     var textAdress:String?=null
     var textDetail:String?=null
-
+    var textUnit:String?=null
 }
