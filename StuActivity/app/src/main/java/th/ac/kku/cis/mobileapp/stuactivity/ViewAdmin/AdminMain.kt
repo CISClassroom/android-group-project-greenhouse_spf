@@ -40,6 +40,7 @@ class AdminMain : AppCompatActivity() {
 
         val btn_signoutt: Button = findViewById(R.id.btlogout)
         btn_signoutt.setOnClickListener({ v -> singOut() })
+
         btsave.setOnClickListener {
 
             var i = Intent(this, Save_Activity::class.java)
