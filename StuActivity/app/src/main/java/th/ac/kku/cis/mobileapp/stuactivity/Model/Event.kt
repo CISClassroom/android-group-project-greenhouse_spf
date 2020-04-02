@@ -1,26 +1,24 @@
 package th.ac.kku.cis.mobileapp.stuactivity.Model
 
 data class Event(
-    var Event_name:String?="",
-    var Day_Start: String?="",
+    var Event_name:String,
+    var Day_Start: String,
     var Day_End: String?="",
-    var Time_Start: String?="",
-    var Time_End: String?="",
-    var location: String?="",
-    var detail: String?="",
-    var Unit_Activity: String?=""){
+    var Time_Start: String,
+    var Time_End: String,
+    var location: String,
+    var detail: String,
+    var Unit_Activity: String){
 
-    fun toMap(): Map<String, Any?> {
-        return mapOf(
-            "Event_name" to Event_name,
-            "Day_Start" to Day_Start,
-            "Day_End" to Day_End,
-            "Time_Start" to Time_Start,
-            "Time_End" to Time_End,
-            "location" to location,
-            "detail" to detail,
-            "Unit_Activity" to Unit_Activity
-        )
+    fun toMap(): Map<String, Any> {
+        val result = HashMap<String, Any>()
+        result.put("Event_name", Event_name!!)
+        result.put("Day_Start", Day_Start!!)
+        result.put("Day_End", Day_End!!)
+        result.put("Time_Start", Time_Start!!)
+        result.put("Time_End", Time_End!!)
+        result.put("location", location!!)
+        return result
     }
 }
 

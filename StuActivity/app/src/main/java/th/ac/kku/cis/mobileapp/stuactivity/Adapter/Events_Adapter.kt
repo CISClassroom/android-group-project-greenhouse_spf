@@ -35,6 +35,7 @@ class Events_Adapter(private val eventslist:List<Event>): RecyclerView.Adapter<E
     }
 
 
+
     class EventViewHolder(itemView : View):RecyclerView.ViewHolder(itemView) {
         val Event_name:TextView = itemView.Activity_name
         val Time_Start:TextView = itemView.time_start
