@@ -24,7 +24,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/Activity_name"
+                    android:id="@+id/nameEvent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/thaisansneue_semi_bold"
@@ -71,7 +71,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/time_start"
+                            android:id="@+id/startDay"
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_gravity="left"
@@ -81,7 +81,7 @@
                             android:textColor="@android:color/background_light" />
 
                         <TextView
-                            android:id="@+id/time_end"
+                            android:id="@+id/endDay"
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_gravity="left"
@@ -118,7 +118,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/Unit_Activity"
+                        android:id="@+id/textUnit"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:fontFamily="@font/thaisansneue_semi_bold"

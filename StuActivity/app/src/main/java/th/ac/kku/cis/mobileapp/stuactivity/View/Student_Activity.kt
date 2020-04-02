@@ -1,55 +1,44 @@
 package th.ac.kku.cis.mobileapp.stuactivity.View
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.activity_student.*
-import th.ac.kku.cis.mobileapp.stuactivity.Adapter.Events_Adapter
+import kotlinx.android.synthetic.main.activity_listview_event.*
+import th.ac.kku.cis.mobileapp.stuactivity.Adapter.adapterSaveEven
 import th.ac.kku.cis.mobileapp.stuactivity.Model.modelsave
 import th.ac.kku.cis.mobileapp.stuactivity.R
+import th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin.AdminMain
+import th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin.Event
 
 
 class Student_Activity : AppCompatActivity() {
-    lateinit var auth: FirebaseAuth
-    lateinit var googleClient: GoogleSignInClient
+
     private val TAG = "logcat_status"
     private lateinit var mRecyclerView : RecyclerView
     private lateinit var  mDatabaseRef : DatabaseReference
     private lateinit var  mEventDatabaseRef : DatabaseReference
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var mFirebaseDatabase: FirebaseDatabase
-    private var Respon_Adapter: Events_Adapter? = null
-    var listitem: MutableList<modelsave> = ArrayList()
+    lateinit var items:MutableList<modelsave>
 
 
-
-
-
-
-    //a list to store all the products
-
-//    val eventslist = ArrayList<Event>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        listitem = mutableListOf()
-
         super.onCreate(savedInstanceState)
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_student)
-//        mDatabaseRef = FirebaseDatabase.getInstance().reference
-//        mEventDatabaseRef = FirebaseDatabase.getInstance().getReference("Event_item")
+
         mRecyclerView = findViewById(R.id.list_recycler_view)
+        items = mutableListOf()
+
         //Dummy
 //        val excamplelist = generateDammyList(10)
 //        list_recycler_view.adapter = Events_Adapter(excamplelist)
@@ -89,27 +78,51 @@ class Student_Activity : AppCompatActivity() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-//                for(dataSnapshot in p0.getChildren()){
-//                    val p: Event? = dataSnapshot.getValue(Event::class.java)
-//                    listitem.add(p!!)
-//                    Log.i(TAG,"mEventDatabaseRef$listitem")
-//                }
-
-//               if(p0!!.exists()){
-//                    NameActivity.text = p0.child("nameEvent").value.toString()
-//                    Sday.text = p0.child("startDay").value.toString()
-//                    Stime.text = p0.child("startTime").value.toString()
-//                    Eday.text = p0.child("endDay").value.toString()
-//                    Etime.text = p0.child("endTime").value.toString()
-//                    Adress.text = p0.child("textAdress").value.toString()
-//                    Unitgroup.text = p0.child("textUnit").value.toString()
-//                    detail.text = p0.child("textDetail").value.toString()
-//                }
+                if(p0!!.exists()){
+                    items.clear()
+                    for (e in p0.children){
+                        val rec = e.getValue(modelsave::class.java)
+                        items.add(rec!!)
+                    }
+                    val adapter = adapterSaveEven(this@Student_Activity,R.layout.list_item,items)
+                    mRecyclerView.adapter = adapter
+                }
             }
 
         })
+//        mRecyclerView.setOnItemClickListener{ parent, view, position, id ->
+//            var i = Intent(this, Event::class.java)
+//            i.putExtra("id",items[position].id)
+//            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+//            startActivity(i)
+//
+//        }
+
+        btback.setOnClickListener {
+
+            var i = Intent(this, AdminMain::class.java)
+            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(i)
+        }
 
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
     private fun bindingData() {
         Log.i(TAG,"bindingData")
@@ -170,10 +183,5 @@ class Student_Activity : AppCompatActivity() {
 //        }
 //        return list
 //    }
-
-
-
-
-}
 
 
