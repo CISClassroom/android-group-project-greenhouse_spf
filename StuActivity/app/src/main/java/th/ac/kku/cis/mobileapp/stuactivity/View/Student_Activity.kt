@@ -1,19 +1,16 @@
 package th.ac.kku.cis.mobileapp.stuactivity.View
 
-import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.activity_listview_event.*
-import th.ac.kku.cis.mobileapp.stuactivity.Adapter.adapterSaveEven
-import th.ac.kku.cis.mobileapp.stuactivity.Model.modelsave
+import th.ac.kku.cis.mobileapp.stuactivity.Adapter.Events_Adapter
+import th.ac.kku.cis.mobileapp.stuactivity.Model.Event
 import th.ac.kku.cis.mobileapp.stuactivity.R
-import th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin.AdminMain
-import th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin.Event
 
 
 class Student_Activity : AppCompatActivity() {
@@ -24,7 +21,8 @@ class Student_Activity : AppCompatActivity() {
     private lateinit var  mEventDatabaseRef : DatabaseReference
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var mFirebaseDatabase: FirebaseDatabase
-    lateinit var items:MutableList<modelsave>
+
+    private val items : MutableList<Event> = mutableListOf()
 
 
 
@@ -37,7 +35,6 @@ class Student_Activity : AppCompatActivity() {
         setContentView(R.layout.activity_student)
 
         mRecyclerView = findViewById(R.id.list_recycler_view)
-        items = mutableListOf()
 
         //Dummy
 //        val excamplelist = generateDammyList(10)
@@ -70,8 +67,9 @@ class Student_Activity : AppCompatActivity() {
 
     private fun bindingData() {
         var sessionId = getIntent().getStringExtra("id");
-        mEventDatabaseRef = FirebaseDatabase.getInstance().getReference("Data_item").child(sessionId)
+        mEventDatabaseRef = FirebaseDatabase.getInstance().getReference("Data_item")
         mEventDatabaseRef!!.addValueEventListener(object :ValueEventListener{
+
 
             override fun onCancelled(p0: DatabaseError) {
                 Toast.makeText(this@Student_Activity, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
@@ -79,14 +77,19 @@ class Student_Activity : AppCompatActivity() {
 
             override fun onDataChange(p0: DataSnapshot) {
                 if(p0!!.exists()){
-                    items.clear()
                     for (e in p0.children){
-                        val rec = e.getValue(modelsave::class.java)
-                        items.add(rec!!)
+                        Log.i(TAG,"items $items")
+                        items.clear()
+                        val rec = e.getValue(Event::class.java)
+                        items.add(rec!! as Event)
                     }
-                    val adapter = adapterSaveEven(this@Student_Activity,R.layout.list_item,items)
+                    val adapter = Events_Adapter(this@Student_Activity,R.layout.list_item,items)
                     mRecyclerView.adapter = adapter
+                    Log.i(TAG,"mRecyclerView $mRecyclerView")
+                    Log.i(TAG,"adapter $adapter")
                 }
+                
+
             }
 
         })
@@ -98,28 +101,14 @@ class Student_Activity : AppCompatActivity() {
 //
 //        }
 
-        btback.setOnClickListener {
-
-            var i = Intent(this, AdminMain::class.java)
-            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-            startActivity(i)
-        }
+//        btback.setOnClickListener {
+//            var i = Intent(this, AdminMain::class.java)
+//            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+//            startActivity(i)
+//        }
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -178,7 +167,7 @@ class Student_Activity : AppCompatActivity() {
 //                3 -> 4.toString()
 //                else -> 5.toString()
 //            }
-//            val item = Event("เชียร์ ASE","01/05/2562","02/05/2562","0800","1800","อคร.1","หน่วยกิตกรรม 5 หน่วย ช่วยงาน",Unit_Activity)
+//            val item = Event("เชียร์ ASE","01/05/2562","02/05/2562","0800","1800","อคร.1","หน่วยกิตกรรม 5 หน่วย ช่วยงาน",textUnit)
 //            list += item
 //        }
 //        return list

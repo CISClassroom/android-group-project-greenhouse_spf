@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_listview_event.*
 import th.ac.kku.cis.mobileapp.stuactivity.Adapter.adapterSaveEven
 import th.ac.kku.cis.mobileapp.stuactivity.Model.modelsave
 import th.ac.kku.cis.mobileapp.stuactivity.R
+import th.ac.kku.cis.mobileapp.stuactivity.View.u_select_detail_show
 
 class ListviewEvent : AppCompatActivity() {
     lateinit var listview: ListView
@@ -53,7 +54,7 @@ class ListviewEvent : AppCompatActivity() {
         }
         )
         listview.setOnItemClickListener { parent, view, position, id ->
-            var i = Intent(this, Event::class.java)
+            var i = Intent(this, u_select_detail_show::class.java)
             i.putExtra("id",items[position].id)
             i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(i)
