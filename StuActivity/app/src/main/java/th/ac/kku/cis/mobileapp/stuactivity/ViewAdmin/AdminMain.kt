@@ -3,6 +3,7 @@ package th.ac.kku.cis.mobileapp.stuactivity.ViewAdmin
 import android.content.Intent
 import android.nfc.Tag
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
