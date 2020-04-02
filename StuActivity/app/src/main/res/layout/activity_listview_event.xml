@@ -10,7 +10,7 @@
     <ListView
         android:id="@+id/listviewAdmin"
         android:layout_width="match_parent"
-        android:layout_height="616dp">
+        android:layout_height="641dp">
 
     </ListView>
 
