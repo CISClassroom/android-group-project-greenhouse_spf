@@ -43,7 +43,7 @@
                     android:layout_width="100dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/common_google_signin_btn_icon_light" />
+                    app:srcCompat="@drawable/list" />
 
                 <TextView
                     android:layout_width="138dp"
@@ -83,7 +83,7 @@
                     android:layout_width="100dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/common_google_signin_btn_icon_light" />
+                    app:srcCompat="@drawable/save" />
 
                 <TextView
                     android:layout_width="match_parent"

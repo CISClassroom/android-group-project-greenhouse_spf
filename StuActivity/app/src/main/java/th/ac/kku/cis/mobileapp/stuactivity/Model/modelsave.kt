@@ -14,4 +14,6 @@ class modelsave {
     var textAdress:String?=null
     var textDetail:String?=null
     var textUnit:String?=null
+    var textNamestudent:String?=null
+    var textNumberstudent:String?=null
 }
