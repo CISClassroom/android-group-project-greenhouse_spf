@@ -24,22 +24,22 @@ class Studen_selectdata : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         val intent = intent
-        var sessionId = intent.getStringExtra("id");
+        var sessionId = intent.getStringExtra("id")
         ref = FirebaseDatabase.getInstance().getReference("Data_item").child(sessionId)
         ref.addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {
+            override fun onCancelled(dataSnapshot: DatabaseError) {
 
             }
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if(dataSnapshot!!.exists()){
-                    nameEvent.text = dataSnapshot.child("nameEvent").value.toString()
-                    startDay.text = dataSnapshot.child("startDay").value.toString()
-                    startTime.text = dataSnapshot.child("startTime").value.toString()
-                    endDay.text = dataSnapshot.child("endDay").value.toString()
-                    endTime.text = dataSnapshot.child("endTime").value.toString()
-                    textAdress.text = dataSnapshot.child("textAdress").value.toString()
-                    textDetail.text = dataSnapshot.child("textUnit").value.toString()
-                    Unittext.text = dataSnapshot.child("textDetail").value.toString()
+//                    nameEvent.text = dataSnapshot.child("nameEvent").value.toString()
+//                    startDay.text = dataSnapshot.child("startDay").value.toString()
+//                    startTime.text = dataSnapshot.child("startTime").value.toString()
+//                    endDay.text = dataSnapshot.child("endDay").value.toString()
+//                    endTime.text = dataSnapshot.child("endTime").value.toString()
+//                    textAdress.text = dataSnapshot.child("textAdress").value.toString()
+//                    textDetail.text = dataSnapshot.child("textUnit").value.toString()
+//                    Unittext.text = dataSnapshot.child("textDetail").value.toString()
                 }
             }
         })

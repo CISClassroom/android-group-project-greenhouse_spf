@@ -31,8 +31,8 @@
         android:layout_height="match_parent"
         android:id="@+id/list_recycler_view"
         android:layout_marginTop="210dp"
-        tools:listitem="@layout/list_item"
-        android:padding="10dp"
+        tools:listitem="@layout/activity_listevent__admin"
+        android:padding="5dp"
         />
 
 
