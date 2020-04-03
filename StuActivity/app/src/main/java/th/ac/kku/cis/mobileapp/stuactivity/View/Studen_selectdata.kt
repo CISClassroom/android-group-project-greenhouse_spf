@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_event.*
 import kotlinx.android.synthetic.main.activity_listevent__admin.*
 import kotlinx.android.synthetic.main.activity_user_select_detail_show.*
 import kotlinx.android.synthetic.main.activity_user_select_detail_show.endDay
@@ -30,16 +31,16 @@ class Studen_selectdata : AppCompatActivity() {
             override fun onCancelled(dataSnapshot: DatabaseError) {
 
             }
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if(dataSnapshot!!.exists()){
-//                    nameEvent.text = dataSnapshot.child("nameEvent").value.toString()
-//                    startDay.text = dataSnapshot.child("startDay").value.toString()
-//                    startTime.text = dataSnapshot.child("startTime").value.toString()
-//                    endDay.text = dataSnapshot.child("endDay").value.toString()
-//                    endTime.text = dataSnapshot.child("endTime").value.toString()
-//                    textAdress.text = dataSnapshot.child("textAdress").value.toString()
-//                    textDetail.text = dataSnapshot.child("textUnit").value.toString()
-//                    Unittext.text = dataSnapshot.child("textDetail").value.toString()
+            override fun onDataChange(p0: DataSnapshot) {
+                if(p0!!.exists()){
+                    NameActivity.text = p0.child("nameEvent").value.toString()
+                    Sday.text = p0.child("startDay").value.toString()
+                    Stime.text = p0.child("startTime").value.toString()
+                    Eday.text = p0.child("endDay").value.toString()
+                    Etime.text = p0.child("endTime").value.toString()
+                    Adress.text = p0.child("textAdress").value.toString()
+                    Unitgroup.text = p0.child("textUnit").value.toString()
+                    detail.text = p0.child("textDetail").value.toString()
                 }
             }
         })

@@ -97,7 +97,7 @@ class Student_Activity : AppCompatActivity() {
 
         })
         mRecyclerView.setOnItemClickListener{ parent, view, position, id ->
-            var i = Intent(this,Studen_selectdata::class.java)
+            var i = Intent(this,u_select_detail_show::class.java)
             i.putExtra("id",items[position].id)
             i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(i)
