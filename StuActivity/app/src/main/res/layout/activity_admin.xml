@@ -78,18 +78,13 @@
                 android:layout_margin="16dp"
                 android:gravity="center"
                 android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/organize" />
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_horizontal"
-<<<<<<< HEAD
-                    app:srcCompat="@drawable/save" />
-=======
-                    app:srcCompat="@drawable/organize" />
->>>>>>> 643fa0e965ad1435c5037be0d891177e02e5fd8c
-
-                <TextView
+            <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentBottom="true"
@@ -97,15 +92,13 @@
                     android:text="เพิ่มกิจกรรม"
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
-                    android:textSize="24sp" />
-
+                    android:textSize="24sp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
 
     <Button
-
         android:id="@+id/btlogout"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
