@@ -13,6 +13,7 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_listview_event.*
 import th.ac.kku.cis.mobileapp.stuactivity.Adapter.Events_Adapter
 import th.ac.kku.cis.mobileapp.stuactivity.Adapter.adapterSaveEven
+import th.ac.kku.cis.mobileapp.stuactivity.Addstudent
 import th.ac.kku.cis.mobileapp.stuactivity.Model.Event
 import th.ac.kku.cis.mobileapp.stuactivity.Model.modelsave
 import th.ac.kku.cis.mobileapp.stuactivity.R
@@ -97,11 +98,11 @@ class Student_Activity : AppCompatActivity() {
 
         })
         mRecyclerView.setOnItemClickListener{ parent, view, position, id ->
-            var i = Intent(this,u_select_detail_show::class.java)
+            var i = Intent(this,Addstudent::class.java)
             i.putExtra("id",items[position].id)
             i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(i)
-            Toast.makeText(this,items[position].textDetail,Toast.LENGTH_LONG).show()
+            //Toast.makeText(this,items[position].textDetail,Toast.LENGTH_LONG).show()
             Log.i(TAG,"show "+items[position].textDetail)
 
         }
